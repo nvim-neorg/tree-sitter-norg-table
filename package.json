@@ -1,0 +1,43 @@
+{
+  "name": "tree-sitter-norg-table",
+  "version": "0.1.0",
+  "description": "A TreeSitter Parser For NFF Tables",
+  "main": "bindings/node",
+  "scripts": {
+    "gen": "tree-sitter generate && node-gyp build",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvim-neorg/tree-sitter-norg-table.git"
+  },
+  "keywords": [
+    "neorg",
+    "norg",
+    "table",
+    "treesitter",
+    "tree-sitter"
+  ],
+  "author": "nvim-neorg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nvim-neorg/tree-sitter-norg-table/issues"
+  },
+  "homepage": "https://github.com/nvim-neorg/tree-sitter-norg-table#readme",
+  "dependencies": {
+    "nan": "^2.15.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "document.norg",
+      "file-types": [
+        "norg"
+      ]
+    }
+  ]
+}
