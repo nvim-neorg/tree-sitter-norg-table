@@ -41,11 +41,10 @@ module.exports = grammar({
 
         _column_separator: $ => '|',
 
-        // TODO: handle negative numbers, too
-        integer: $ => /\d+/,
+        integer: $ => /[\+-]?\d+/,
 
-        float: $ => /\d+\.\d*/,
+        float: $ => /[\+-]?\d+\.\d*/,
 
-        word: $ => /[a-zA-Z_]\S+/,
+        word: $ => /[a-zA-Z-_]\S+/,
     }
 })

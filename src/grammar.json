@@ -99,15 +99,15 @@
     },
     "integer": {
       "type": "PATTERN",
-      "value": "\\d+"
+      "value": "[\\+-]?\\d+"
     },
     "float": {
       "type": "PATTERN",
-      "value": "\\d+\\.\\d*"
+      "value": "[\\+-]?\\d+\\.\\d*"
     },
     "word": {
       "type": "PATTERN",
-      "value": "[a-zA-Z_]\\S+"
+      "value": "[a-zA-Z-_]\\S+"
     }
   },
   "extras": [

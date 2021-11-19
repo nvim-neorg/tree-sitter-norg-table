@@ -12,7 +12,7 @@ Single Cell
 ==============
 Multiple Cells
 ==============
-1 | 2 | 3
+1 | -2 | 3
 ---
 (table
     (row
@@ -25,11 +25,13 @@ Multiple Cells
 ===========
 Mixed Cells
 ===========
-1 | 2.0 | 3.
+1 | 2.0 | 3. | -4.0 | -5.
 ---
 (table
     (row
         (cell (integer))
+        (cell (float))
+        (cell (float))
         (cell (float))
         (cell (float))
     )
