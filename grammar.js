@@ -8,26 +8,40 @@ module.exports = grammar({
             ),
         ),
 
-        row: $ => seq(
-            $._column_separator,
-            repeat1(
-                seq(
-                    $.cell,
+        row: $ => prec.right(
+            seq(
+                $.cell,
+                repeat(
+                    seq(
+                        $._column_separator,
+                        $.cell,
+                    ),
+                ),
+                optional(
                     $._column_separator,
+                ),
+                optional(
+                    // This looks stupid but it ensures that line breaks are
+                    // able to end a row while also not requiring an empty line
+                    // below the final row.
+                    token.immediate('\n'),
                 ),
             ),
         ),
 
-        cell: $ => repeat1(
-            choice(
-                $.integer,
-                $.float,
-                $.word,
+        cell: $ => prec.right(
+            repeat1(
+                choice(
+                    $.integer,
+                    $.float,
+                    $.word,
+                ),
             ),
         ),
 
-        _column_separator: $ => /\|/,
+        _column_separator: $ => '|',
 
+        // TODO: handle negative numbers, too
         integer: $ => /\d+/,
 
         float: $ => /\d+\.\d*/,

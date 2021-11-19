@@ -14,53 +14,88 @@
       }
     },
     "row": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_column_separator"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "cell"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_column_separator"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "cell": {
-      "type": "REPEAT1",
+      "type": "PREC_RIGHT",
+      "value": 0,
       "content": {
-        "type": "CHOICE",
+        "type": "SEQ",
         "members": [
           {
             "type": "SYMBOL",
-            "name": "integer"
+            "name": "cell"
           },
           {
-            "type": "SYMBOL",
-            "name": "float"
+            "type": "REPEAT",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_column_separator"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "cell"
+                }
+              ]
+            }
           },
           {
-            "type": "SYMBOL",
-            "name": "word"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_column_separator"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "IMMEDIATE_TOKEN",
+                "content": {
+                  "type": "STRING",
+                  "value": "\n"
+                }
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         ]
       }
     },
+    "cell": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "integer"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "float"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "word"
+            }
+          ]
+        }
+      }
+    },
     "_column_separator": {
-      "type": "PATTERN",
-      "value": "\\|"
+      "type": "STRING",
+      "value": "|"
     },
     "integer": {
       "type": "PATTERN",

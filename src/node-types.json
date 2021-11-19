@@ -53,6 +53,10 @@
     }
   },
   {
+    "type": "\n",
+    "named": false
+  },
+  {
     "type": "float",
     "named": true
   },
