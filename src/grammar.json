@@ -1,9 +1,67 @@
 {
   "name": "norg_table",
   "rules": {
+    "table": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "row"
+          }
+        ]
+      }
+    },
+    "row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_column_separator"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "cell"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_column_separator"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "cell": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "integer"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "float"
+        }
+      ]
+    },
+    "_column_separator": {
+      "type": "PATTERN",
+      "value": "\\|"
+    },
     "integer": {
       "type": "PATTERN",
       "value": "\\d+"
+    },
+    "float": {
+      "type": "PATTERN",
+      "value": "\\d+\\.\\d*"
     }
   },
   "extras": [
