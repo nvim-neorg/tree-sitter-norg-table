@@ -76,3 +76,30 @@ Heading | Heading2 | Heading Three | Heading 4 | Heading 5.1
         (cell (word) (float))
     )
 )
+
+=========================
+Trailing Column Separator
+=========================
+1 |
+---
+(table
+    (row
+        (cell (integer))
+    )
+)
+
+===================================
+Multi-Row Trailing Column Separator
+===================================
+1 | 2
+1 |
+---
+(table
+    (row
+        (cell (integer))
+        (cell (integer))
+    )
+    (row
+        (cell (integer))
+    )
+)
