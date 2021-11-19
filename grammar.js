@@ -5,11 +5,15 @@ module.exports = grammar({
         table: $ => repeat1(
             choice(
                 $.row,
+                $.horizontal_rule,
             ),
         ),
 
         row: $ => prec.right(
             seq(
+                optional(
+                    $._column_separator,
+                ),
                 $.cell,
                 repeat(
                     seq(
@@ -21,10 +25,7 @@ module.exports = grammar({
                     $._column_separator,
                 ),
                 optional(
-                    // This looks stupid but it ensures that line breaks are
-                    // able to end a row while also not requiring an empty line
-                    // below the final row.
-                    token.immediate('\n'),
+                    $._new_line,
                 ),
             ),
         ),
@@ -41,10 +42,21 @@ module.exports = grammar({
 
         _column_separator: $ => '|',
 
+        _ruler: $ => /\-+/,
+
+        _new_line: $ => token.immediate('\n'),
+
         integer: $ => /[\+-]?\d+/,
 
         float: $ => /[\+-]?\d+\.\d*/,
 
         word: $ => /[a-zA-Z-_]\S+/,
+
+        horizontal_rule: $ => seq(
+            $._ruler,
+            optional(
+                $._new_line,
+            ),
+        ),
     }
 })

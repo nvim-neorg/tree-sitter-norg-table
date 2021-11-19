@@ -103,3 +103,34 @@ Multi-Row Trailing Column Separator
         (cell (integer))
     )
 )
+
+===============
+Horizontal Rule
+===============
+Key | Value
+-
+1 | 2
+--
+3 |
+ -
+| 4
+---
+(table
+    (row
+        (cell (word))
+        (cell (word))
+    )
+    (horizontal_rule)
+    (row
+        (cell (integer))
+        (cell (integer))
+    )
+    (horizontal_rule)
+    (row
+        (cell (integer))
+    )
+    (horizontal_rule)
+    (row
+        (cell (integer))
+    )
+)

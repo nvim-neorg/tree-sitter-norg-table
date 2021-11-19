@@ -23,6 +23,11 @@
     }
   },
   {
+    "type": "horizontal_rule",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "row",
     "named": true,
     "fields": {},
@@ -46,15 +51,15 @@
       "required": true,
       "types": [
         {
+          "type": "horizontal_rule",
+          "named": true
+        },
+        {
           "type": "row",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "\n",
-    "named": false
   },
   {
     "type": "float",
