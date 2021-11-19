@@ -59,3 +59,18 @@ Multiple Rows
         (cell (integer))
     )
 )
+
+==========
+Word Table
+==========
+| Heading | Heading2 | Heading Three | Heading 4 | Heading 5.1 |
+---
+(table
+    (row
+        (cell (word))
+        (cell (word))
+        (cell (word) (word))
+        (cell (word) (integer))
+        (cell (word) (float))
+    )
+)

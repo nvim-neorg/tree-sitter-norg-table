@@ -18,14 +18,20 @@ module.exports = grammar({
             ),
         ),
 
-        cell: $ => choice(
-            $.integer,
-            $.float,
+        cell: $ => repeat1(
+            choice(
+                $.integer,
+                $.float,
+                $.word,
+            ),
         ),
 
         _column_separator: $ => /\|/,
 
         integer: $ => /\d+/,
+
         float: $ => /\d+\.\d*/,
+
+        word: $ => /[a-zA-Z_]\S+/,
     }
 })

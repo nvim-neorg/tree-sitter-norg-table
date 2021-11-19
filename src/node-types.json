@@ -4,7 +4,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -13,6 +13,10 @@
         },
         {
           "type": "integer",
+          "named": true
+        },
+        {
+          "type": "word",
           "named": true
         }
       ]
@@ -54,6 +58,10 @@
   },
   {
     "type": "integer",
+    "named": true
+  },
+  {
+    "type": "word",
     "named": true
   }
 ]
