@@ -1,0 +1,58 @@
+=========================
+Trailing Column Separator
+=========================
+1 |
+
+---
+(table
+    (row
+        (cell (integer))
+    )
+)
+
+==============
+Multiple Cells
+==============
+1 | 2
+
+---
+(table
+    (row
+        (cell (integer))
+        (cell (integer))
+    )
+)
+
+===========
+Mixed Cells
+===========
+1 | 2.0 | 3. | -4.0 | -5. | word | two words
+
+---
+(table
+    (row
+        (cell (integer))
+        (cell (float))
+        (cell (float))
+        (cell (float))
+        (cell (float))
+        (cell (paragraph))
+        (cell (paragraph))
+    )
+)
+
+========
+Word Row
+========
+Heading | Heading2 | Heading Three | Heading 4 | Heading 5.1
+
+---
+(table
+    (row
+        (cell (paragraph))
+        (cell (paragraph))
+        (cell (paragraph))
+        (cell (paragraph))
+        (cell (paragraph))
+    )
+)

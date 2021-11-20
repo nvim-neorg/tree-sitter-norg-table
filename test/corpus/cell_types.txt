@@ -1,0 +1,119 @@
+==============
+Single Integer
+==============
+1
+
+---
+(table
+    (row
+        (cell (integer))
+    )
+)
+
+================
+Negative Integer
+================
+-1
+
+---
+(table
+    (row
+        (cell (integer))
+    )
+)
+
+============
+Single Float
+============
+1.0
+
+---
+(table
+    (row
+        (cell (float))
+    )
+)
+
+==============
+Negative Float
+==============
+-1.0
+
+---
+(table
+    (row
+        (cell (float))
+    )
+)
+
+==============================
+Float without trailing numbers
+==============================
+1.
+
+---
+(table
+    (row
+        (cell (float))
+    )
+)
+
+=======================================
+Negative Float without trailing numbers
+=======================================
+-1.
+
+---
+(table
+    (row
+        (cell (float))
+    )
+)
+
+=============
+Invalid Float
+=============
+1.0.0
+
+---
+(table
+    (row
+        (cell (paragraph))
+    )
+)
+
+==================
+Single letter word
+==================
+A
+
+---
+(table
+    (row
+        (cell (paragraph))
+    )
+)
+
+================
+Single paragraph
+================
+Two words
+
+---
+(table
+    (row
+        (cell (paragraph))
+    )
+)
+
+============================
+Single paragraph with markup
+============================
+*Two words*
+
+---
+(table
+    (row
+        (cell (paragraph))
+    )
+)

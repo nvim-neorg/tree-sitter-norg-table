@@ -1,0 +1,54 @@
+===========================
+Single-Char Horizontal Rule
+===========================
+-
+
+---
+(table
+    (horizontal_rule)
+)
+
+==========================
+Multi-Char Horizontal Rule
+==========================
+--
+---
+
+---
+(table
+    (horizontal_rule)
+    (horizontal_rule)
+)
+
+==========================================
+Horizontal Rules with preceding whitespace
+==========================================
+ -
+ --
+
+---
+(table
+    (horizontal_rule)
+    (horizontal_rule)
+)
+
+
+==========================
+Horizontal Rule in Context
+==========================
+Key | Value
+-
+1 | 2
+
+---
+(table
+    (row
+        (cell (paragraph))
+        (cell (paragraph))
+    )
+    (horizontal_rule)
+    (row
+        (cell (integer))
+        (cell (integer))
+    )
+)
