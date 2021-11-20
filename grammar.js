@@ -50,7 +50,7 @@ module.exports = grammar({
 
         float: $ => /[\+-]?\d+\.\d*/,
 
-        word: $ => /[a-zA-Z-_]\S+/,
+        word: $ => /[a-zA-Z-_]\S*/,
 
         horizontal_rule: $ => seq(
             $._ruler,

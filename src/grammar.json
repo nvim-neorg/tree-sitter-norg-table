@@ -131,7 +131,7 @@
     },
     "word": {
       "type": "PATTERN",
-      "value": "[a-zA-Z-_]\\S+"
+      "value": "[a-zA-Z-_]\\S*"
     },
     "horizontal_rule": {
       "type": "SEQ",
