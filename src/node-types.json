@@ -67,6 +67,10 @@
     }
   },
   {
+    "type": "_column_separator",
+    "named": false
+  },
+  {
     "type": "float",
     "named": true
   },

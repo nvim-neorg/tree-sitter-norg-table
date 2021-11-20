@@ -12,17 +12,17 @@ module.exports = grammar({
         row: $ => prec.right(
             seq(
                 optional(
-                    $._column_separator,
+                    alias($.column_separator, "_column_separator"),
                 ),
                 $.cell,
                 repeat(
                     seq(
-                        $._column_separator,
+                        alias($.column_separator, "_column_separator"),
                         $.cell,
                     ),
                 ),
                 optional(
-                    $._column_separator,
+                    alias($.column_separator, "_column_separator"),
                 ),
                 $._new_line,
             ),
@@ -53,7 +53,7 @@ module.exports = grammar({
 
         _word: $ => /\S+/,
 
-        _column_separator: $ => '|',
+        column_separator: $ => '|',
 
         _new_line: $ => token.immediate('\n'),
     }
