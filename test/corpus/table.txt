@@ -2,6 +2,7 @@
 Single Cell
 ===========
 1
+
 ---
 (table
     (row
@@ -13,6 +14,7 @@ Single Cell
 Multiple Cells
 ==============
 1 | -2 | 3
+
 ---
 (table
     (row
@@ -26,6 +28,7 @@ Multiple Cells
 Mixed Cells
 ===========
 1 | 2.0 | 3. | -4.0 | -5.
+
 ---
 (table
     (row
@@ -43,6 +46,7 @@ Multiple Rows
 1 | 2 | 3
 4 | 5 | 6
 7 | 8 | 9
+
 ---
 (table
     (row
@@ -66,14 +70,15 @@ Multiple Rows
 Word Table
 ==========
 Heading | Heading2 | Heading Three | Heading 4 | Heading 5.1
+
 ---
 (table
     (row
-        (cell (word))
-        (cell (word))
-        (cell (word) (word))
-        (cell (word) (integer))
-        (cell (word) (float))
+        (cell (paragraph))
+        (cell (paragraph))
+        (cell (paragraph))
+        (cell (paragraph))
+        (cell (paragraph))
     )
 )
 
@@ -81,6 +86,7 @@ Heading | Heading2 | Heading Three | Heading 4 | Heading 5.1
 Trailing Column Separator
 =========================
 1 |
+
 ---
 (table
     (row
@@ -93,6 +99,7 @@ Multi-Row Trailing Column Separator
 ===================================
 1 | 2
 1 |
+
 ---
 (table
     (row
@@ -114,11 +121,12 @@ Key | Value
 3 |
  -
 | 4
+
 ---
 (table
     (row
-        (cell (word))
-        (cell (word))
+        (cell (paragraph))
+        (cell (paragraph))
     )
     (horizontal_rule)
     (row
@@ -138,10 +146,23 @@ Key | Value
 ==================
 Single letter word
 ==================
-A Heading
+A
+
 ---
 (table
     (row
-        (cell (word) (word))
+        (cell (paragraph))
+    )
+)
+
+================
+Single word cell
+================
+Two words
+
+---
+(table
+    (row
+        (cell (paragraph))
     )
 )

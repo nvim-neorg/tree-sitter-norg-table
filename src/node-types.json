@@ -4,7 +4,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -16,7 +16,7 @@
           "named": true
         },
         {
-          "type": "word",
+          "type": "paragraph",
           "named": true
         }
       ]
@@ -24,6 +24,11 @@
   },
   {
     "type": "horizontal_rule",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "paragraph",
     "named": true,
     "fields": {}
   },
@@ -67,10 +72,6 @@
   },
   {
     "type": "integer",
-    "named": true
-  },
-  {
-    "type": "word",
     "named": true
   }
 ]

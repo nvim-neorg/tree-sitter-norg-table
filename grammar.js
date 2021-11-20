@@ -24,39 +24,37 @@ module.exports = grammar({
                 optional(
                     $._column_separator,
                 ),
-                optional(
-                    $._new_line,
-                ),
+                $._new_line,
             ),
         ),
 
-        cell: $ => prec.right(
+        cell: $ => choice(
+            $.integer,
+            $.float,
+            $.paragraph,
+        ),
+
+        paragraph: $ => prec(2,
             repeat1(
-                choice(
-                    $.integer,
-                    $.float,
-                    $.word,
-                ),
+                $._word,
             ),
         ),
 
-        _column_separator: $ => '|',
-
-        _ruler: $ => /\-+/,
-
-        _new_line: $ => token.immediate('\n'),
+        horizontal_rule: $ => seq(
+            $._ruler,
+            $._new_line,
+        ),
 
         integer: $ => /[\+-]?\d+/,
 
         float: $ => /[\+-]?\d+\.\d*/,
 
-        word: $ => /[a-zA-Z-_]\S*/,
+        _ruler: $ => /\-+/,
 
-        horizontal_rule: $ => seq(
-            $._ruler,
-            optional(
-                $._new_line,
-            ),
-        ),
+        _word: $ => /\S+/,
+
+        _column_separator: $ => '|',
+
+        _new_line: $ => token.immediate('\n'),
     }
 })

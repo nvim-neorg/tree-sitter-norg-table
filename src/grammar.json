@@ -68,70 +68,39 @@
             ]
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_new_line"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "_new_line"
           }
         ]
       }
     },
     "cell": {
-      "type": "PREC_RIGHT",
-      "value": 0,
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "integer"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "float"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "paragraph"
+        }
+      ]
+    },
+    "paragraph": {
+      "type": "PREC",
+      "value": 2,
       "content": {
         "type": "REPEAT1",
         "content": {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "integer"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "float"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "word"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "_word"
         }
       }
-    },
-    "_column_separator": {
-      "type": "STRING",
-      "value": "|"
-    },
-    "_ruler": {
-      "type": "PATTERN",
-      "value": "\\-+"
-    },
-    "_new_line": {
-      "type": "IMMEDIATE_TOKEN",
-      "content": {
-        "type": "STRING",
-        "value": "\n"
-      }
-    },
-    "integer": {
-      "type": "PATTERN",
-      "value": "[\\+-]?\\d+"
-    },
-    "float": {
-      "type": "PATTERN",
-      "value": "[\\+-]?\\d+\\.\\d*"
-    },
-    "word": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z-_]\\S*"
     },
     "horizontal_rule": {
       "type": "SEQ",
@@ -141,18 +110,37 @@
           "name": "_ruler"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_new_line"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "_new_line"
         }
       ]
+    },
+    "integer": {
+      "type": "PATTERN",
+      "value": "[\\+-]?\\d+"
+    },
+    "float": {
+      "type": "PATTERN",
+      "value": "[\\+-]?\\d+\\.\\d*"
+    },
+    "_ruler": {
+      "type": "PATTERN",
+      "value": "\\-+"
+    },
+    "_word": {
+      "type": "PATTERN",
+      "value": "\\S+"
+    },
+    "_column_separator": {
+      "type": "STRING",
+      "value": "|"
+    },
+    "_new_line": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "\n"
+      }
     }
   },
   "extras": [
